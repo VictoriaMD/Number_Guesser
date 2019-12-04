@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src='./script.js'></script>
     <link rel = "stylesheet" type = "text/css"href = "style.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
     <title>Number Guesser</title>
@@ -11,53 +12,64 @@
 <body>
     <div class="game-container">
         <header>Number Guesser</header>
+
         <div class="round-table">
-            <p class="rounds">Round <span class="round-number">1</span></p>
+            <p class="rounds">Round <span id="round-number">1</span></p>
+        </div>
+        <div class="guess-table">
+            <p class="guess">Target number: <span id="target-number">?</span></p>
         </div>
 
-        <div class="game-table">
+            <div class="game-table">
 
-            <div class="computer-game">
-                <div class="computer-table">
-                    <p>Computer</p>
-                    <p>Score: <span class="computer-number">0</span></p>
+                <div class="computer-game">
+                    <div class="computer-table">
+                      <h3>Computer</h3>
+                     <p>Score: <span id="computer-score">0</span></p>
+                    </div>
+                    <div class="computer-number">?</div>
                 </div>
-                <div class="computer-score">?</div>
-            </div>
 
-            <div class="user-game">
-                <div class="user-table">
-                    <p>You</p>
-                    <p>Score: <span class="user-number">0</span></p>
-                </div class="user-number">
-                <input type="number" id="human-guess" min=0 max=9 value=0>
-                <div class="number-controls">
+                <div class="user-game">
+                    <div class="user-table">
+                       <h3>You</h3>
+                       <p>Score: <span id="user-score">0</span></p>
+                    </div>
+                    <div class="user-guess">
+                      <input type="number" id="user-number" min=0 max=9 value=0>
+                    </div>
+                    <div class="number-controls">
                         <button class="number-control left" id="subtract" disabled>-</button>
                         <button class="number-control right" id="add">+</button>
+                    </div>
+                    <div>
+                       <button class="button" id="guess" onclick="computerChoice()">Make a Guess</button>
+                    </div>
                 </div>
-                <div>
-                <button class="button" id="guess">Make a Guess</button>
             </div>
-                </div>
+
+            <div>
+              <button class="next-round" disabled>Next Round</button>
             </div>
-             <div>
-                 <button class="next-round" disabled>Next Round</button>
-             </div>
-        </div>
-         <div class="instructions">
-              <div class="step-1">
-                  <p>Step 1</p>
+    </div>
+    </div>
+
+         
+        <div class="instructions">
+              <div class="step">
+                  <h3>Step 1</h3>
                   <p>Input a number between 0 and 9</p>
               </div>
-              <div class="step-2">
-                  <p>Step 2</p>
+              <div class="step">
+                  <h3>Step 2</h3>
                   <p>Click "Make a guess" to submit your guess and see who won the round.</p>
               </div>
-              <div class="step-3">
-                  <p>Step 3</p>
+              <div class="step">
+                  <h3>Step 3</h3>
                   <p>Click "Next Round" to play again.</p>
               </div>
-         </div>
-    </div>
+        </div>
+         
+    
 </body>
 </html>

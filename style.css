@@ -11,24 +11,45 @@ header {
 font-size: 52px;
 font-weight: bold;
 background-color: #d8afe7;
-height: 120px;
+height: 60px;
 color: #607d8b;
 text-align: center;
-padding-top: 25px;
+padding-top: 10px;
 }
 
-.rounds {
+.rounds, .guess {
     text-align: center;
+    font-size: 36px;
+}
+
+.game-table {
+    display: grid;
+    height: 300px;
+    width: 80%;
+    margin: auto;
+   grid-template-areas: repeat(4, 1fr) / repeat(2, 1fr);
+   justify-items: center;
 }
 
 .computer-game {
-    display: block;
-    position: relative;
-    left: 50px;
+    grid-area: 1 / 1 / 5 / 2;
 }
 
 .user-game {
-    display: block;
-    position: relative;
-    align-content: flex-end;
+    grid-area: 1 / 2 / 5 / 3;
+}
+
+.instructions {
+    display: flex;
+    width: 100%;
+    margin: auto;
+   justify-content: space-around;
+}
+
+.step {
+    width: 180px;
+    padding: 2px;
+    text-align: center;
+    border-top: 1px solid #607d8b;
+    border-bottom: 1px solid  #607d8b;
 }

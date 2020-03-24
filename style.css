@@ -3,7 +3,8 @@ html, body {
 }
 
 body {
-    background-color: #d4dbdc;
+    background-image: linear-gradient(to bottom right,#d4dbdc,#d8afe7 );
+;
     font-family: 'Varela Round', Arial, Helvetica, sans-serif;
 }
 

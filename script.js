@@ -1,28 +1,26 @@
-let targetNumber = document.getElementById("target-number");
-let computerScore = document.getElementById("computer-score");
-let computerNumber = document.getElementById("computer-number");
-const userScore = document.getElementById("user-score");
-const userNumber = document.getElementById("user-number");
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
 
-const targetChoice = () => {
-    let randomNumber = Math.floor(Math.random() * 10);
-    targetNumber = randomNumber;
-    if(targetNumber === true) {
-        console.log(targetNumber);
-    }
+// Write your code below:
+const generateTarget = () => {
+  let randomNumber = Math.floor(Math.random() *10);
+  return randomNumber;
 };
 
-const computerChoice = () => {
-    let randomNumber = Math.floor(Math.random() * 10);
-    computerNumber = randomNumber;
-    console.log(computerNumber);
+const compareGuesses = (humanGuess, computerGuess, secretNumber) => {
+  const absNumHuman = Math.abs(secretNumber - humanGuess);
+  const absComputer = Math.abs(secretNumber - computerGuess);
+  return absHuman <= absComputer;
 };
 
-computerChoice();
+const updateScore = string => {
+  if (string === 'human') {
+    humanScore++;
+  } else if (string === 'computer') {
+    computerScore++;
+  }
+};
 
-
-
-
-
-
+const advanceRound = () => currentRoundNumber++;
 
